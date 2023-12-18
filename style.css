@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    -webkit-user-drag: none;
+}
+html{
+    font-size: 75%;
+}
+.ground-container{
+    width: 100vw;
+    height: 100vh;
+    background:linear-gradient(#ffffff3d,#00000044,#ffffff38), url('img/Cricket_Stadium.svg');;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-areas: "bot bot bot"
+    "game-overview game-overview game-overview"
+    "user user user";
+    grid-template-columns: repeat(1fr);
+    grid-template-rows: 1fr 4fr 1fr;
+    gap: 1rem;
+}
+.bot{
+    grid-area: bot;
+}
+.game-overview{
+    grid-area: game-overview;
+}
+.user{
+    grid-area: user;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1px);
+    border-bottom: .1rem solid #c5c5c5;
+    border-top: .1rem solid #aaa;
+    padding:0 1rem;
+}
+.profile-container{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.bot .profile-container{
+    flex-direction: row-reverse;
+}
+.details p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0077ffc4;
+}
+.details span{
+    color: #ffff;
+}
+.bot p{
+    color: #ff0000;
+}
+.score-list{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.score-list h2{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+.score-list img{
+    height: 5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.2),inset 1px 1px 5px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+    
+}
+.score-list img:active{
+    opacity: 1;
+    border: .1rem solid #333;
+}
+.profile-container img{
+    height: 5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: .2rem solid #fff;
+}
+.game-overview{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.bot-input-show,.user-input-show{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+}
+.bot-input-show h2{
+    font-size: 3rem;
+    color: #ff0000;
+}
+.user-input-show h2{
+    font-size: 3rem;
+    color: #00a2ff;
+}
+.bot-input-show img,.user-input-show img{
+    height: 10rem;
+    aspect-ratio: 1/1;
+    border-radius:50%;
+}
+.result-show h1{
+    font-size: 5rem;
+    font-weight: bold;
+    color: #ffff;
+}
+.game-result-show{
+    width: 30rem;
+    height: 15rem;
+    aspect-ratio: 1/1;
+    background:#ffffff;
+    backdrop-filter: blur(2px);
+    box-shadow: .1rem .1rem 1rem 1rem rgba(0, 0, 0, 0.5),inset 1px 1px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    position: absolute;
+    inset: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+    display: none;
+}
+.game-result-show p{
+    font-size: 2rem;
+    color: #0077ffc4;
+}
+.game-result-show .btn-grp button:last-of-type{
+    background-color: #0077ffc4;
+}
+.game-result-show .btn-grp button{
+    height: 3rem;
+    width:8rem;
+    outline: none;
+    border: none;
+    background-color: #aaaa;
+    color: #fff;
+    border-radius: .1rem;
+    opacity: 0.9;
+}
+.game-result-show .btn-grp button:active{
+    opacity: 1;
+    border: .1rem solid #333;
+}
+.blur{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: none;
+}
