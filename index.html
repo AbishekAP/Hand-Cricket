@@ -6,36 +6,37 @@
     <title>Hand Cricket</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
         <div class="ground-container">
 <!---- details ----->
             <div class="details container">
-                <div class="profile-container">
+                <div class="profile-container" id="opponent-profile">
                     <img src="img/cricket-championship.jpg" alt="" />
                     <div class="details">
-                        <p>Oppenent: <span>Bowling</span></p>
+                        <p>Opponent: <span>Bowling</span></p>
                         <p>Score: <span>0</span></p>
                     </div>
                 </div>
-                <div class="profile-container">
+                <div class="profile-container" id="user-profile">
                     <img src="img/cricket-championship.jpg" alt=""  />
                     <div class="details">
                         <p>You: <span>Batting</span></p>
-                        <p>Score: <span>0</span></p>
+                        <p>Score: <span class="user-score">0</span></p>
                     </div>
                 </div>
             </div>
 <!---- Game overview ----->
             <div class="game-overview">
-                <div class="oppenent-input-show">
+                <div class="opponent-input-show">
                     <img src="img/score-0.png" alt="img"  id="opponent-hit">
-                    <h2>Oppenent</h2>
+                    <h2>Opponent</h2>
                 </div>
                 <div class="result-show">
-                    <h1>vs</h1>
+                    <h1 id="result-show-text">vs</h1>
                 </div>
                 <div class="user-input-show">
                     <img src="img/score-0.png" alt="img"  id="user-hit">
@@ -44,23 +45,31 @@
             </div>
 <!---- Score pick ---->
             <div class="run-pick container">
+                <div class="game-options-container">
+                    <button type="button" id="audio-play-btn" class="game-options fa-solid fa-volume-high"></button>
+                </div>
                 <div class="score-list">
                     <h2>Hit :</h2>
-                    <img src="img/score-0.png" alt="score" class="score" value="0" />
-                    <img src="img/score-1.png" alt="score" class="score" value="1" />
-                    <img src="img/score-2.png" alt="score" class="score" value="2" />
-                    <img src="img/score-3.png" alt="score" class="score" value="3" />
-                    <img src="img/score-4.png" alt="score" class="score" value="4" />
-                    <img src="img/score-5.png" alt="score" class="score" value="5" />
-                    <img src="img/score-6.png" alt="score" class="score" value="6" />
+                    <img src="img/score-0.png" alt="score" class="score" id="0" />
+                    <img src="img/score-1.png" alt="score" class="score" id="1" />
+                    <img src="img/score-2.png" alt="score" class="score" id="2" />
+                    <img src="img/score-3.png" alt="score" class="score" id="3" />
+                    <img src="img/score-4.png" alt="score" class="score" id="4" />
+                    <img src="img/score-5.png" alt="score" class="score" id="5" />
+                    <img src="img/score-6.png" alt="score" class="score" id="6" />
                 </div>
             </div>
             <div class="game-result-show">
-                <p>You Went Play Again?</p>
+                <p>You Went to Play Again?</p>
                 <div class="btn-grp">
-                    <button type="button">Cancel</button>
-                    <button type="button" id="btn-ok">OK</button>
+                    <button type="button" id="btn-quit">Quit</button>
+                    <button type="button" id="btn-yes">Yes</button>
                 </div>
+            </div>
+            <div class="music-container">
+                <audio id="audio" controls   loop>
+                    <source src="audio/cricket-background-sound.mp3" type="audio/mp3">
+                </audio>
             </div>
         </div>
         <div class="blur"></div> 

@@ -47,6 +47,9 @@
     align-items: center;
     gap: 2rem;
 }
+.profile-container:last-of-type{
+    flex-direction: row-reverse;
+}
 .details p{
     font-size: 1.2rem;
     font-weight: bold;
@@ -64,14 +67,14 @@
     align-items: center;
     justify-content: space-around;
 }
-.oppenent-input-show,.user-input-show{
+.opponent-input-show,.user-input-show{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     gap:1rem;
 }
-.oppenent-input-show h2{
+.opponent-input-show h2{
     font-size: 2.5rem;
     color: var(--red);
     font-weight: 800;
@@ -87,11 +90,16 @@
     text-shadow: 1px 5px 5px #3333; */
     text-shadow: 1px 3px 0px #ffff;
 }
-.oppenent-input-show img,.user-input-show img{
+.opponent-input-show img,.user-input-show img{
     height: 10rem;
     aspect-ratio: 1/1;
     border-radius:50%;
     filter: drop-shadow(1px 5px 5px rgba(0, 0, 0, 0.5)); 
+}
+.result-show{
+    position: absolute;
+    inset: 50;
+    z-index: 2;
 }
 .result-show h1{
     padding: 1rem;
@@ -104,11 +112,24 @@
 .run-pick.container{
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
     border-top: .2rem solid #ffffff;
     padding:0 1rem;
+}
+.game-options{
+    width: 3rem;
+    height: 3rem;
+    aspect-ratio: 1/1;
+    color: #ffff;
+    border: .2rem solid #ffff;
+    border-radius: 50%;
+    background: transparent;
+}
+.game-options:active{
+    color:var(--blue);
+    background: #ffff;
 }
 .score-list{
     padding: 20px;
@@ -180,6 +201,9 @@
 .game-result-show .btn-grp button:active{
     opacity: 1;
     border: .1rem solid #333;
+}
+.music-container{
+    display: none;
 }
 /* Background Blur */
 .blur{
