@@ -17,14 +17,14 @@
                 <div class="profile-container" id="opponent-profile">
                     <img src="img/cricket-championship.jpg" alt="" />
                     <div class="details">
-                        <p>Opponent: <span>Bowling</span></p>
-                        <p>Score: <span>0</span></p>
+                        <p>Opponent</p>
+                        <p>Score: <span  class="opponent-score">0</span></p>
                     </div>
                 </div>
                 <div class="profile-container" id="user-profile">
                     <img src="img/cricket-championship.jpg" alt=""  />
                     <div class="details">
-                        <p>You: <span>Batting</span></p>
+                        <p>You</p>
                         <p>Score: <span class="user-score">0</span></p>
                     </div>
                 </div>
@@ -34,6 +34,7 @@
                 <div class="opponent-input-show">
                     <img src="img/score-0.png" alt="img"  id="opponent-hit">
                     <h2>Opponent</h2>
+                    <p>(<span id="opponent-play">Bowling</span>)</p>
                 </div>
                 <div class="result-show">
                     <h1 id="result-show-text">vs</h1>
@@ -41,6 +42,7 @@
                 <div class="user-input-show">
                     <img src="img/score-0.png" alt="img"  id="user-hit">
                     <h2>You</h2>
+                    <p>(<span id="user-play">Batting</span>)</p>
                 </div>
             </div>
 <!---- Score pick ---->
@@ -60,10 +62,19 @@
                 </div>
             </div>
             <div class="game-result-show">
-                <p>You Went to Play Again?</p>
+                <div  id="game-result-score" class="game-result-score">
+
+                </div>
                 <div class="btn-grp">
                     <button type="button" id="btn-quit">Quit</button>
-                    <button type="button" id="btn-yes">Yes</button>
+                    <button type="button" id="btn-play-again">Play Again</button>
+                </div>
+            </div>
+            <div class="game-play-choose">
+                <p class="inform-text">Choose One:</p>
+                <div class="btn-grp">
+                    <button type="button" id="btn-bat">bat</button>
+                    <button type="button" id="btn-bowl">bowl</button>
                 </div>
             </div>
             <div class="music-container">

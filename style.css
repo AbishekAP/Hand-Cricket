@@ -90,6 +90,17 @@
     text-shadow: 1px 5px 5px #3333; */
     text-shadow: 1px 3px 0px #ffff;
 }
+.user-input-show p,.opponent-input-show p{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #ffff;
+}
+.user-input-show span{
+    color: var(--blue);
+}
+.opponent-input-show span{
+    color: var(--red);
+}
 .opponent-input-show img,.user-input-show img{
     height: 10rem;
     aspect-ratio: 1/1;
@@ -161,15 +172,16 @@
     border: .2rem solid #fff;
 }
 
-/* Game Result & informations */
-.game-result-show{
+/* Game Result & informations and Game Play Choose  */
+.game-play-choose,.game-result-show{
     width: 30rem;
     height: 15rem;
     aspect-ratio: 1/1;
-    background:#ffffff;
+    background:rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
-    box-shadow: .1rem .1rem 1rem 1rem rgba(0, 0, 0, 0.3),inset 1px 1px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 1rem;
+    box-shadow: .1rem 1rem 1rem 1rem rgba(0, 0, 0, 0.3);
+    border: .2rem solid #ffff;
+    border-radius: .5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -181,24 +193,44 @@
     z-index: 3;
     display: none;
 }
-.game-result-show p{
+.game-play-choose{
+    display:flex ;
+}
+.game-result-show{
+    display: none;
+}
+.game-result-score span{
+    font-size: 1rem;
+    display: block;
+    text-align: start;
+    color: #ffff;
+}
+
+.game-result-score p{
     font-size: 1.5rem;
-    color: #0077ffc4;
+    text-align: center;
+    color: #ffff;
+    margin-bottom: .5rem  
 }
-.game-result-show .btn-grp button:last-of-type{
-    background-color: #0077ffc4;
+.inform-text{
+    font-size: 1.5rem;
+    text-align: center;
+    color: #ffff;
 }
-.game-result-show .btn-grp button{
+ .btn-grp button:last-of-type{
+    background-color: var(--blue);
+}
+ .btn-grp button{
     height: 2rem;
     width:6rem;
     outline: none;
     border: none;
-    background-color: #aaaa;
+    background-color: var(--red);
     color: #fff;
     border-radius: .1rem;
     opacity: 0.9;
 }
-.game-result-show .btn-grp button:active{
+ .btn-grp button:active{
     opacity: 1;
     border: .1rem solid #333;
 }
@@ -210,9 +242,8 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(0.1rem);
     position: fixed;
     inset: 0;
     z-index: 1;
-    display: none;
 }
