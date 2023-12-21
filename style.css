@@ -1,249 +1,79 @@
+*{
+   padding: 0;
+   margin: 0; 
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+}
 :root{
     --blue:#0654e4;
     --red:#e90606;
 }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 1px;
-}
-
-/* ground container */
-.ground-container{
-    width: 100vw;
-    height: 100vh;
-    background:linear-gradient(#0000001f,#ffffff50,#0000002f), url('img/Cricket_Stadium.svg');
-    background-position: center;
+body{
+    min-height: 100vh;
+    background:linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.2)),url("img/e55398302005d004808c35d70b6179bc.gif");
+    background-position:center;
     background-repeat: no-repeat;
     background-size: cover;
-    display: grid;
-    grid-template-areas: "details details details"
-    "game-overview game-overview game-overview"
-    "run-pick run-pick run-pick";
-    grid-template-columns: repeat(1fr);
-    grid-template-rows: 1fr 4fr 1fr;
-    gap: 1rem;
+    overflow: hidden;
 }
-.details{
-    grid-area: details;
-}
-.game-overview{
-    grid-area: game-overview;
-}
-.run-pick{
-    grid-area: run-pick;
-}
-.details.container{
+header{
+    width: 100vw;
+    height: 50px;
+    padding: 0 2rem;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:0 1rem;
 }
-.profile-container{
+nav ul{
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
     gap: 2rem;
 }
-.profile-container:last-of-type{
-    flex-direction: row-reverse;
+nav ul li{
+    list-style: none;
+    border: .2rem solid transparent;
+    padding-bottom: .5rem;
 }
-.details p{
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--blue);
-}
-.details span{
-    color: #ffff;
-}
-.profile-container:first-of-type p{
-    color: var(--red);
-}
-/* Game overview */
-.game-overview{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-.opponent-input-show,.user-input-show{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    gap:1rem;
-}
-.opponent-input-show h2{
-    font-size: 2.5rem;
-    color: var(--red);
-    font-weight: 800;
-    /* -webkit-text-stroke: .1rem #ffffff;
-    text-shadow: 1px 5px 5px #3333; */
-    text-shadow: 1px 3px 0px #ffff;
-}
-.user-input-show h2{
-    font-size: 2.5rem;
-    color: var(--blue);
-    font-weight: 800;
-    /* -webkit-text-stroke: .1rem #ffffff;
-    text-shadow: 1px 5px 5px #3333; */
-    text-shadow: 1px 3px 0px #ffff;
-}
-.user-input-show p,.opponent-input-show p{
-    font-size: 1.2rem;
+nav ul li a{
+    font-size: 1.3rem;
     font-weight: 400;
     color: #ffff;
+    text-decoration: none;
 }
-.user-input-show span{
-    color: var(--blue);
+nav ul li:hover{
+    border-bottom-color:var(--blue);
 }
-.opponent-input-show span{
-    color: var(--red);
-}
-.opponent-input-show img,.user-input-show img{
-    height: 10rem;
-    aspect-ratio: 1/1;
-    border-radius:50%;
-    filter: drop-shadow(1px 5px 5px rgba(0, 0, 0, 0.5)); 
-}
-.result-show{
-    position: absolute;
-    inset: 50;
-    z-index: 2;
-}
-.result-show h1{
-    padding: 1rem;
-    font-size: 4rem;
-    font-weight: bold;
-    color: #ffff;
-    text-shadow: 1px 5px 0px var(--red);
-}
-/* Run pick */
-.run-pick.container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
-    border-top: .2rem solid #ffffff;
-    padding:0 1rem;
-}
-.game-options{
-    width: 3rem;
-    height: 3rem;
-    aspect-ratio: 1/1;
-    color: #ffff;
-    border: .2rem solid #ffff;
-    border-radius: 50%;
-    background: transparent;
-}
-.game-options:active{
-    color:var(--blue);
-    background: #ffff;
-}
-.score-list{
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-.score-list h2{
-    font-size: 2rem;
-    font-weight: 600;
-    color: #ffff;
-    -webkit-text-stroke: .1rem #ffffff;
-    text-shadow: 1px 5px 5px #3333;
-}
-.score-list img{
-    height: 4rem;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    filter: drop-shadow(1px 5px 5px rgba(0, 0, 0, 0.5)); 
-    border: .2rem solid #ffff;
-}
-.score-list img:active{
-    background-color:  #ffff;
-}
-.profile-container img{
-    height: 4rem;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    border: .2rem solid #fff;
-}
+/**/
 
-/* Game Result & informations and Game Play Choose  */
-.game-play-choose,.game-result-show{
-    width: 30rem;
-    height: 15rem;
-    aspect-ratio: 1/1;
-    background:rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(2px);
-    box-shadow: .1rem 1rem 1rem 1rem rgba(0, 0, 0, 0.3);
-    border: .2rem solid #ffff;
-    border-radius: .5rem;
+.home{
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-    position: absolute;
-    inset: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 3;
-    display: none;
+    row-gap: 1.5rem;
 }
-.game-play-choose{
-    display:flex ;
+.home h1{
+    font-size: 5rem;
+    font-weight: bold;
+    color: var(--blue);
+    -webkit-text-stroke: .1rem  #fff;
 }
-.game-result-show{
-    display: none;
+.home p{
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--red);
+    border-bottom: .3rem solid #ffff;
 }
-.game-result-score span{
-    font-size: 1rem;
-    display: block;
-    text-align: start;
-    color: #ffff;
-}
-
-.game-result-score p{
-    font-size: 1.5rem;
-    text-align: center;
-    color: #ffff;
-    margin-bottom: .5rem  
-}
-.inform-text{
-    font-size: 1.5rem;
-    text-align: center;
-    color: #ffff;
-}
- .btn-grp button:last-of-type{
-    background-color: var(--blue);
-}
- .btn-grp button{
-    height: 2rem;
-    width:6rem;
-    outline: none;
-    border: none;
-    background-color: var(--red);
-    color: #fff;
+.home a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: .5rem 3rem;
+    background: var(--blue);
     border-radius: .1rem;
-    opacity: 0.9;
-}
- .btn-grp button:active{
-    opacity: 1;
-    border: .1rem solid #333;
-}
-.music-container{
-    display: none;
-}
-/* Background Blur */
-.blur{
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(0.1rem);
-    position: fixed;
-    inset: 0;
-    z-index: 1;
+    color: #ffff;
+    border: .1rem solid #ffff;
 }

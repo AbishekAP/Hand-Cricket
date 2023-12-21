@@ -23,23 +23,13 @@ var opponentRun=0;
 var userBat=0;
 var playCount=0;
 let flag=1;
-$playBtn.addEventListener("click",()=>{
-    if(flag==1){
-        $audio.play();
-        flag=0;
-    }
-    else{
-        $audio.pause();
-        flag=1;
-    }
-})
-
+//show run in user
 $score.forEach((e)=>{
        e.addEventListener('click',()=>{
            $userHit.src=e.src;
            userRun=parseInt(e.id);
            opponentPlay();
-           userScore(userRun)
+           
        });
 });
 
@@ -54,7 +44,7 @@ function opppontScore(score){
         totalOpponentScore=totalOpponentScore+score;
         $opponentScore.innerHTML=totalOpponentScore;
         $userPlay.innerHTML=`Bowling`;
-        $opponentPlay.innerHTML=`Batting`
+        $opponentPlay.innerHTML=`Batting`;
     }
 }
 $batBtn.addEventListener('click',()=>{
@@ -71,9 +61,9 @@ $bowlBtn.addEventListener('click',()=>{
     $opponentPlay.innerHTML=`Batting`;
     userBat=0;
 });
+//Opponent Hit and Show run 
 function opponentPlay(){
     opponentRun=Math.floor((Math.random()*7));
-    opppontScore(opponentRun)
     switch(opponentRun){
         case 0:
             $opppentHit.src="img/score-0.png";
@@ -107,11 +97,11 @@ function resultCheck(user,opponent){
     if(user == opponent){
         $result.innerHTML=`OUT!`;
         blur(1);
+        playCount++;
         setTimeout(()=>{
             gameReset();
             blur(0);
             $result.innerHTML=`VS`;
-            playCount++;
         },5000);
         if(userBat==1){
             userBat=0;
@@ -124,6 +114,15 @@ function resultCheck(user,opponent){
             $opponentPlay.innerHTML=`Bowling`;
         }
     }
+    else{
+        if(userBat==1){
+            userScore(userRun)
+        }
+        else{
+            opppontScore(opponentRun)
+        }
+    }
+    //Final Result check 
     if(playCount==2){
         if(totalUserScore>totalOpponentScore){
             $result.innerHTML=`Win!`;
@@ -148,7 +147,7 @@ function resultCheck(user,opponent){
         }
     }
     else if(playCount==1){
-        if(userBat=1){
+        if(userBat==1){
             if(totalUserScore>totalOpponentScore){
                 $result.innerHTML=`Win!`;
                 blur(1);
@@ -168,14 +167,16 @@ function resultCheck(user,opponent){
         }
     }
     else{
-        console.log("work")
+        console.log("Game going smooth")
     }
 }
 function gameResultScore(status){
     $gameResult.style.display="flex";
-    $gameResultScore.innerHTML=`<p>${status} The Match!</p>
-    <span>Your score     :${totalUserScore}</span>
-    <span>Opponent score :${totalOpponentScore}</span>`
+    $gameResultScore.innerHTML=
+    `<p>${status} The Match!</p>
+    <span>Your score:${totalUserScore}</span>
+    <span>Opponent score:${totalOpponentScore}</span>`
+    blur(1);
 }
 $quitBtn.addEventListener('click',()=>{
     console.log("thanks");
@@ -202,3 +203,14 @@ function gameReset(){
     $userHit.src="img/score-0.png";
     $opppentHit.src="img/score-0.png";
 }
+//Audio Turn ON & OFF 
+$playBtn.addEventListener("click",()=>{
+    if(flag==1){
+        $audio.play();
+        flag=0;
+    }
+    else{
+        $audio.pause();
+        flag=1;
+    }
+})
