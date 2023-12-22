@@ -180,11 +180,11 @@ function gameResultScore(status){
 }
 $quitBtn.addEventListener('click',()=>{
     console.log("thanks");
-    location.assign("/index.html")
+    location.replace("/index.html")
 
 });
 $playAgainBtnBtn.addEventListener('click',()=>{
-    location.replace("/index.html")
+    location.replace("/game.html")
 });
 // Background Blur 
 function blur(flag){

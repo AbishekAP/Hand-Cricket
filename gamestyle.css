@@ -217,12 +217,13 @@
     text-align: center;
     color: #ffff;
 }
- .btn-grp button:last-of-type{
+ .btn-grp .btn:last-of-type{
     background-color: var(--blue);
 }
- .btn-grp button{
+ .btn-grp .btn{
     height: 2rem;
     width:6rem;
+    padding: 0rem 1rem;
     outline: none;
     border: none;
     background-color: var(--red);
@@ -230,8 +231,9 @@
     color: #ffff;
     border-radius: .1rem;
     opacity: 0.9;
+    text-decoration: none;
 }
- .btn-grp button:active{
+ .btn-grp .btn:active{
     opacity: 1;
     border: .1rem solid #ffffff52;
 }
