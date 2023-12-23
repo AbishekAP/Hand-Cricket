@@ -115,6 +115,7 @@ section .home-container .btn{
     color: #ffff;
     font-size: 1.2rem;
     border: .1rem solid #ffff;
+    box-shadow: 10px 10px 5px  var(--blue);
     border-radius: .1rem;
 }
 section .home-container .btn:hover{
@@ -173,8 +174,8 @@ section .home-container .btn:hover{
     align-items: end;
     justify-content: center;
     flex-wrap: wrap;
-    row-gap: 1rem;
-    padding: 2rem;
+    row-gap: 5rem;
+    padding: 10rem 0 3rem;
     overflow-y: auto;
 }
 .guide-container .steps-container{
@@ -185,7 +186,7 @@ section .home-container .btn:hover{
 }
 .guide-container .steps-container h1{
     color: #ffff;
-    font-size: 5rem;
+    font-size:5rem;
     -webkit-text-stroke: .1rem #ffff;
     text-shadow: 2px 5px 1px var(--red);
 }

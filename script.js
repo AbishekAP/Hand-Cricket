@@ -8,6 +8,7 @@ const $blur=document.querySelector(".blur");
 const $gameResult=document.querySelector(".game-result-show");
 const $quitBtn=document.querySelector("#btn-quit");
 const $playAgainBtnBtn=document.querySelector("#btn-play-again");
+const $backHomePage=document.querySelector("#back-home-page");
 const $audio=document.querySelector("#audio");
 const $playBtn=document.querySelector("#audio-play-btn");
 const $gamePlayChoose=document.querySelector(".game-play-choose");
@@ -180,11 +181,14 @@ function gameResultScore(status){
 }
 $quitBtn.addEventListener('click',()=>{
     console.log("thanks");
-    location.replace("/index.html")
+    location.replace("./index.html")
 
 });
 $playAgainBtnBtn.addEventListener('click',()=>{
-    location.replace("/game.html")
+    location.replace("./game.html")
+});
+$backHomePage.addEventListener('click',()=>{
+    location.replace("./index.html")
 });
 // Background Blur 
 function blur(flag){
