@@ -38,6 +38,7 @@
 }
 .details.container{
     display: flex;
+    margin-top: 1rem;
     align-items: center;
     justify-content: space-between;
     padding:0 1rem;
@@ -46,14 +47,21 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+    padding: 1rem;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    backdrop-filter: blur(5rem);
+    border: .2rem solid #ffffff;
 }
 .profile-container:last-of-type{
     flex-direction: row-reverse;
 }
 .details p{
-    font-size: 1.3rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 600;
     color: var(--blue);
+    text-shadow: 0px 1px 0px #ffff;
 }
 .details span{
     color: #ffff;
@@ -216,8 +224,10 @@
     color: #ffff;
 }
  .btn-grp .btn{
+    font-size: 1rem;
     height: 2rem;
-    width:6rem;
+    min-width:6rem;
+    padding:0 .5rem ;
     outline: none;
     border: none;
     background-color: var(--red);
@@ -247,4 +257,47 @@
     position: fixed;
     inset: 0;
     z-index: 1;
+}
+/*media quaries*/
+@media (max-width:1120px) {
+
+    html {
+        font-size: 100%;
+    }
+}
+
+@media (max-width:991px) {
+    html {
+        font-size: 90%;
+    }
+}
+
+@media (max-width:786px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+@media (max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+   
+}
+@media (max-width:375px) {
+    html {
+        font-size: 50%;
+    }
+    .game-options-container{
+        display: none;
+    }
+    .score-list h2{
+       display: none;
+    }
+}
+
+@media (max-width:250px) {
+    html {
+        font-size: 30%;
+    }
 }

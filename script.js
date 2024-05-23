@@ -211,10 +211,12 @@ function gameReset(){
 $playBtn.addEventListener("click",()=>{
     if(flag==1){
         $audio.play();
+        $playBtn.className="game-options fa-solid fa-volume-high";
         flag=0;
     }
     else{
         $audio.pause();
+        $playBtn.className="game-options fa-solid fa-volume-xmark";
         flag=1;
     }
 })

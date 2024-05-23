@@ -207,3 +207,40 @@ section .home-container .btn:hover{
     height:100%;
     object-fit: cover;
 }
+/*media quaries*/
+@media (max-width:1120px) {
+
+    html {
+        font-size: 100%;
+    }
+}
+
+@media (max-width:991px) {
+    html {
+        font-size: 90%;
+    }
+}
+
+@media (max-width:786px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+@media (max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+   
+}
+@media (max-width:375px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+@media (max-width:250px) {
+    html {
+        font-size: 25%;
+    }
+}
